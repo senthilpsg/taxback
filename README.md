@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 3. `npm install`
 
-4.  `ng serve` 
+4.  `ng serve --open` 
 
 5.  Open browser and Navigate to `http://localhost:4200/`. 
 
