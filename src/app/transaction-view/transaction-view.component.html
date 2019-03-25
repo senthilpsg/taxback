@@ -1,0 +1,29 @@
+<div class="col-lg-12">
+  <div col='row'>
+    <a href="/list">
+      << Back</a> </div> <h1 align="center">View Transaction</h1>
+        <br />
+        <div class="col-lg-6" style="margin:auto" *ngIf="transaction">
+          <table class="table">
+            <tr>
+              <td>id:</td>
+              <td>
+                {{transaction.id}}
+              </td>
+            </tr>
+            <tr>
+              <td>User:</td>
+              <td>{{transaction.user}}</td>
+            </tr>
+            <tr>
+              <td>Amount:</td>
+              <td>{{transaction.amount}}</td>
+            </tr>
+            <tr>
+              <td>Transaction Date:</td>
+              <td>{{transaction.txn_date}}</td>
+            </tr>
+          </table>
+        </div>
+
+  </div>

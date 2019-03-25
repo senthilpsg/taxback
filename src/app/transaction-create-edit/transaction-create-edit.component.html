@@ -1,0 +1,60 @@
+<div class="col-lg-12" *ngIf="!displayAsChild">
+    <div col='row'><a href="/list"><< Back</a></div>
+    <h1 align="center">{{title}}</h1>
+    <br />
+    <div class="col-lg-4" style="margin:auto">
+        <div class="alert alert-success" *ngIf="showSuccess">
+            Transaction Saved Successfully for user {{transaction.user}}.
+        </div>
+        <div class="alert alert-success" *ngIf="showPostError">
+                Error in Saving Transaction details for {{transaction.user}}.
+        </div>
+        <form name="form">
+            <div class="form-group row ">
+                <label for="useremail" class="col-sm-4 col-form-label">User Email </label>
+                <div class="col-sm-8">
+                    {{ transaction.email }}
+                    <input type="hidden" name="user" [(ngModel)]="transaction.user" >
+
+                    <!-- <input type="email" name="user" [(ngModel)]="transaction.user" class="form-control" placeholder="Enter User email"
+                        required> -->
+                </div>
+            </div>
+            <div class="form-group row ">
+                <label for="amount" class="col-sm-4 col-form-label">Amount</label>
+                <div class="col-sm-8">
+                    <input type="text" name="amount" [(ngModel)]="transaction.amount" class="form-control" placeholder="Enter Amount"
+                        required>
+                </div>
+            </div>
+            <div class="form-group row ">
+                <label for="" class="col-sm-4 col-form-label">Currency</label>
+                <div class="col-sm-8">
+                    <select class="custom-select" required [(ngModel)]="transaction.currency" name="currency">
+                        <option value="">-- Select Currency --</option>
+                        <option value="EUR">EUR</option>
+                        <option value="INR">INR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row ">
+                <label for="exampleInputEmail1" class="col-sm-4 col-form-label">Transaction Date</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" name="txn_date" [(ngModel)]="transaction.txn_date" placeholder="Enter transaction date"
+                        required>
+                </div>
+            </div>
+            <div class="alert alert-danger" *ngIf="!(error ==='')" ng-bind-html="error">
+
+            </div>
+            <div class="row float-right">
+                    <a class="btn btn-primary "  href="/list" style="margin-right:10px;">Cancel</a>
+                <button type="submit" class="btn btn-primary float-right" (click)="submit()">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

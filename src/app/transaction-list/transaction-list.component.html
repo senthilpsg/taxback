@@ -1,0 +1,38 @@
+<div class="row">
+<div class="col-lg-8" style="margin:auto" >
+
+
+    <h1 align="center" style="margin:10px;">Transaction List</h1>
+    
+    
+  
+    
+    <table class="table">
+            <thead>
+              <tr>
+                <th class="col-1">ID</th>
+                <th class="col-2">user</th>
+                <th  class="col-3">amount</th>
+                <th  class="col-4">currency</th>
+                <th  class="col-5">Txn Date</th>
+                <th  class="col-6">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let trans of transactions">
+                <td ><a href="/view/{{trans.id}}">{{trans.id}} </a> </td>
+                <td>{{trans.user}}</td>
+                <td>{{trans.amount}}</td>
+                <td>{{trans.currency}}</td>
+                <td>{{trans.txn_date}}</td>
+                <td>
+                        <a href="/edit/{{trans.id}}">Edit</a> 
+
+                    <button class=".btn .btn-primary delete" (click)="delete(trans.id)" >Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+</div>
+</div>
